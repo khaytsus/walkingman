@@ -1,0 +1,54 @@
+JPK11.04.92-25.04.92
+
+
+zu erstellende Module:
+
+Zufallsgenerator:
+	(erzeugt zufällige Werte auf unterschiedliche Arten)
+	-Initialisierung des Moduls.
+	-Entfernung des Moduls.
+	-Münzwurf (Wahrscheinlichkeit 50%/50%).
+	-Zufallswert in einem Bereich.
+Die Erstellung ist erfolgreich abgeschlossen.
+
+
+Listenverwaltung:
+	(erstellt eine Liste für relativ wenige Einträge, auf die schnell
+	zugegriffen werden kann)
+	-Initialisierung des Moduls.
+	-Entfernung des Moduls.
+	-Initialisierung einer neuen, leeren Liste.
+	-löschen aller Einträge einer Liste.
+	-entfernen eines Elements aus einer Liste.
+	-einfügen eines Elements hinter bzw. vor einem anderen.
+	-prüfen, ob dies das erste bzw. letzte Element der Liste ist.
+	-Zugriff auf das erste bzw. letzte Element.
+	-Zugriff auf das vorangehende bzw. nachfolgende Element.
+	-prüfen, ob die Liste leer ist.
+Die Erstellung ist erfolgreich abgeschlossen.
+
+
+Hierarchischer Aufbau der Module:
+
+			Hauptprogramm
+					|
+		Bewegungsgenerator
+			|				|
+	Darstellung		Bildschirmanalyse
+
+	Das Hauptprogramm greift nicht direkt auf die Module Darstellung und
+Bildschirmanalyse zu.  Allerdings kann man Bewegungsgenerator, Darstellung
+und Bildschirmanalyse nicht unabhängig voneinander sehen; sie sind in ihren
+Funktionen, Voraussetzungen und Berechnungsgrundlagen aufeinander
+abgestimmt.  Die Aufteilung in Module entspricht vielmehr der Behandlung
+der verschiedenen Themengebiete; dadurch behalten die einzelnen Quellcode-
+und Headerfiles überschaubare Größen, was für die Entwicklung nicht
+unwesentlich ist.
+	Durch die Aufteilung in Module, vor allem die Benutzung der Module
+Zufallsgenerator und Listenverwaltung und das Vorhandensein von seltenst
+benutzten oder fast leeren Funktionen (..Init/..Clear, Liste_Sohn etc.),
+wird der Code zwar verlangsamt und verlängert, ich schätze die Auswirkungen
+allerdings gering ein im Vergleich zu größerer Fehleranfälligkeit,
+schlechteren Wartungs- und Entwicklungsmöglichkeiten; das Optimieren kann
+man ruhig einem guten Compiler/Optimizer überlassen.
+

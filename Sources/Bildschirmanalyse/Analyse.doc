@@ -1,0 +1,58 @@
+JPK13.04.92-21.04.92
+
+
+Import:
+	Listenverwaltung.
+	Bewegungsgenerator.
+	IntuitionBase.
+
+Export:
+
+
+Funktionen:
+
+Analyse_Init:
+	-ist vor dem ersten Benutzen des Moduls aufzurufen.
+	-keine Parameter.
+	-kein Rückgabewert.
+
+Analyse_Clear:
+	-ist nach dem letzten Benutzen des Moduls aufzurufen.
+	-keine Parameter.
+	-kein Rückgabewert.
+
+Analyse_Neu:
+	-bereitet ein neues Männchen vor.
+	-Parameter (struct Manneintrag *): einzurichtendes Männchen.
+	-Ergebnis: das Männchen ist eingerichtet.
+
+Analyse_Alt:
+	-räumt ein Männchen analysemäßig auf.
+	-Parameter (struct Manneintrag *): zu bereinigendes Männchen.
+	-Ergebnis: das Männchen kann sofort geschlossen werden.
+
+Analyse_Screens:
+	-überprüft die Stellung und die Zusatzdaten der Screens und speichert
+		sie; bewegt die Männchen, falls nötig, und trägt dort alle nötigen
+		Daten ein.
+	-Parameter (struct Mannliste *): Liste der Männchen für Veränderungen.
+	-Rückgabewert (char): 0/1 für Erfolg/Fehler.
+
+Analyse_Grundlage:
+	-sucht die Grundlage eines Männchens an der gegebenen Position.
+	-Parameter (struct Manneintrag *):  Männchen, dessen Grund gesucht
+		werden soll.  Es muß die korrekte Position eingetragen sein.
+	-Ergebnis: Es ist ein geeigneter Screen eingetragen.
+
+Analyse_Refresh:
+	-frischt die Farben für die vom Programm benutzten Sprites auf.
+	-keine Parameter.
+	-kein Ergebnis.
+
+Analyse_Nachttest:
+	-prüft, ob der Hintergrund des Männchens ausreichend lange ausreichend
+		hell ist, um es normal darstellen zu können, oder ob seine
+		Taschenlampe angeschaltet werden muß.  Setzt das entsprechende Flag.
+	-Parameter (struct Manneintrag *): zu prüfendes Männchen.
+	-Ergebnis: Flag in Männchen.
+

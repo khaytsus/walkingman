@@ -1,0 +1,25 @@
+JPK12.04.92
+
+
+Zufall_Init:
+	-ist vor dem ersten Benutzen des Moduls aufzurufen.
+	-keine Parameter.
+	-kein Rückgabewert.
+
+Zufall_Clear:
+	-ist nach dem letzten Benutzen des Moduls aufzurufen.
+	-keine Parameter.
+	-kein Rückgabewert.
+
+Zufall_Muenzwurf:
+	-simuliert einen Münzwurf mit gleicher Wahrscheinlichkeit für beide
+		Möglichkeiten.
+	-keine Parameter.
+	-Ergebnis (byte): 0 oder 1, das equal-flag ist entsprechend
+		gesetzt.
+
+Zufall_Wert/Zufall_C_Wert:
+	-erzeugt eine zufällige Zahl in vorgegebenen Bereich.
+	-Parameter: (d0.w/long) Anzahl der möglichen Ergebniswerte.
+	-Ergebnis (word): zufälliger Wert im Bereich [0..parameter[.
+

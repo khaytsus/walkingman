@@ -1,0 +1,9 @@
+execute s:prog-startup
+wbmono
+cd programmierung/wandersmann
+assign l: listenverwaltung
+assign z: zufallsgenerator
+assign b: bildschirmanalyse
+assign m: bewegungsgenerator
+assign d: darstellung
+

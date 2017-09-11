@@ -1,0 +1,41 @@
+JPK13.04.92-14.04.92
+
+
+Import:
+	struct Mann:
+		zur Bestimmung der Positionen der Männchen sowie Bewegungsart,
+		-richtung, -phase etc.
+Export:
+	MAN_HEIGHT:
+		Höhe des Männchens, die bei der Wahl von Bewegungen berücksichtigt
+		werden muß.
+
+
+Funktionen:
+
+Disp_Init:
+	-ist vor dem ersten Benutzen des Moduls aufzurufen.
+	-keine Parameter.
+	-kein Rückgabewert.
+
+Disp_Clear:
+	-ist nach dem letzten Benutzen des Moduls aufzurufen.
+	-keine Parameter.
+	-kein Rückgabewert.
+
+Disp_Neu:
+	-richtet ein neues Männchen ein.
+	-Parameter (struct Manneintrag *): zu initialisierendes Männchen.
+	-Rückgabe (byte): 0/1 für Fehler/Erfolg.
+
+Disp_Alt:
+	-entfernt eines der Männchen sofort vom Bildschirm und gibt die
+		entsprechenden Ressorcen frei.
+	-Parameter (struct Manneintrag *): zu entfernendes Männchen.
+	-keine Rückgabe.
+
+Disp_Schritt:
+	-stellt den Bewegungsschritt eines Männchens dar.
+	-Parameter (struct Manneintrag *): darzustellendes Männchen.
+	-kein Ergebnis außer der grafischen Darstellung.
+

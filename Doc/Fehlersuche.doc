@@ -1,0 +1,30 @@
+JPK21.04.92
+
+
+	Tips zur Fehlersuche bei unerklärlichen Phänomenen:
+
+Zu den Modulen:
+-Zufall_Muenzwurf() liefert stets nur einen Wert:
+	es wurde noch nicht Zufall_Init() aufgerufen.
+-Zufall_Wert() liefert stets dieselbe Wertabfolge:
+	es wurde nicht Zufall_Init() aufgerufen.
+
+Zum Gesamtprogramm:
+	Ich habe mich bemüht, das Programm so systemgerecht wie möglich zu
+gestalten.  So werden z.B.  Schutzprotokolle ausreichend eingehalten.
+Allerdings ist darauf zu achten, daß das Programm in der vorliegenden
+Version HAM sowie die neuen Grafikmodi und die Verschiebung von Screens auf
+der Waagerechten nicht vollständig unterstützt.  Da für unbekannte
+Auflösungen auch keine korrekte Position und Ausdehnung auf dem Bildschirm
+berechnet werden kann, ist vorauszusehen, daß die Bewegung der Männchen bei
+Benutzung dieser Möglichkeiten planlos mutiert.  Trotzdem bin ich
+zuversichtlich, daß zumindest die Funktionsfähigkeit des Systems erhalten
+bleibt.
+	Momentan treten bereits Probleme bei Benutzung von
+HIRES-INTERLACE-Grafiken auf.  Da hier die einzelnen Bitplanes bereits
+größer als 32KB sind, ist der Compiler nicht mehr in der Lage, die
+korrekten Positionen anzusprechen (das Programm ist hingegen darauf
+ausgerichtet).  Ab Zeile 400 hängen die Männchen also in der Regel planlos
+in der Luft, was sich allerdings durch Nachvornebringen eines anderen
+Screens einfach bereinigen ist.
+

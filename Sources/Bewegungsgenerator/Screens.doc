@@ -1,0 +1,38 @@
+JPK22.04.92
+
+
+	Bewegungen bei Screenmanipulationen und anderen Gründen:
+
+	Nach jeder erkannten Screenänderung werden die Männchen auf die Screens
+gesetzt, die ihrer Position entsprechen.  Männchen, die nirgendwo sichtbar
+sind, erhalten als Grundlage einen Pseudoscreen.
+
+	Bewegen sich die Männchen im Bereich ihres Screens, sind sie also
+vollständig auf ihm darstellbar, ist alles in Ordnung.  Ist dies jedoch
+nicht der Fall, so müssen sie in Richtung der Screens bewegt werden.  Dies
+geschieht folgendermaßen:
+	Ist die Grundlinie eines Männchens einem Screen zuzuordnen, der Kopf
+allerdings außerhalb, wird es bei einer Screenverschiebng nach unten um die
+entsprechende Strecke nach unten gedrückt.  Bei normalen Bewegungen muß
+eine Abfrage nach Linien erfolgt seine, diese wird bei mangelnder
+Kopffreiheit negativ beantwortet, was wiederum einen Fall in den Screen zur
+Folge hat; außerdem können die Männchen nicht in illegale Bereiche steigen.
+	Das Männchen kann, wenn es hochspringt, in andere Screens eindringen; an
+der Bildschirmoberkante wird es allerdings gestoppt, um ein völliges
+Verschwinden zu verhindern.
+	Liegt das Männchen zwischen einer Screenoberkante und der Oberkante des
+darunterliegenden Screens, wird es dem oberen Screen zugeschlagen.
+Linienabfaragen nach Bereichen unterhalb des gültigen, durch die Bitmap
+belegten Bereichs werden stets positiv beantwortet, so daß das Männchen in
+den Screen klettert.
+
+	Dadurch, daß Männchen ohne Screengrundlage den Pseudoscreen zugewiesen
+bekommen, ergibt sich folgendes:
+	Der Screen befindet sich an der Unterkante des Bildschirms. Das führt
+dazu daß die Männchen fallen; irgendwo muß normalerweise ein Screen
+auftauchen, was bei der üblichen Kontrolle geprüft wird (weil sich das
+Männchen oberhalb des Screens befindet).
+	Existiert kein einziger Screen, hält es an der "Unterkante" des
+Pseudoscreens, welcher auch gleichzeitig die Unterkante des Bildschirms
+ist, an.  Die Untersuchung neuer Screens ist aber nicht gefährdet.
+

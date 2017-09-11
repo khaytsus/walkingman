@@ -1,0 +1,17 @@
+JPK22.04.92-23.04.92
+
+
+	Auswirkungen von Sprites auf die Darstellung:
+
+	Durch Sprites ist es möglich, die Männchen unabhängig von der Farbwahl
+des grundlegenden Screens darzustellen und schnell zu bewegen.  Da eine
+eckige Form vermieden werden soll, ist es nötig, einige Pixel
+halbdurchlässig zu gestalten; diese werden nur auf jedem zweiten Bild
+dargestellt.
+	Leider oszilliert das Bild dann auf allzu hellen Schirmen, die
+eigentliche Grafik sieht dafür aber um einiges besser aus.  Man kann dem
+oszillierenden Aussehen aber auch positive Seiten abgewinnen:  mit ein
+wenig Phantasie kann man sich wehendes Haupthaar vorstellen, wie es
+vielleicht von dem Spiel "Lemmings" her bekannt ist (wobei ich betonen
+möchte, daß meine Männchen etwas planvoller durch die Gegend laufen!).
+

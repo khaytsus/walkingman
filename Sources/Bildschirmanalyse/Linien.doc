@@ -1,0 +1,33 @@
+JPK21.04.92
+
+
+	Die Analyse von horizontalen Linien:
+
+-Linien, die bereits durch die Screenabmessungen feststehen:
+	sie wird durch die Unterkante des Screens bestimmt; diese wiederum
+	ist anhand Screeneintrag->sichtbar erkennbar.
+		Dabei ist zu beachten, daß sichtbar die Höhe in Sprite-Pixelgröße
+	angibt, was aber kein Nachteil ist, denn auch Interlace-Screens werden
+	um diese Distanzen verschoben.
+		Da stets ein Kontrast zu der darunterliegenden Linie gesucht wird,
+	wird also die Untersuchung der untersten noch sichtbaren Linie als
+	Erfolg gewertet werden.
+
+-Linien, die erst durch Farbuntersuchungen gesucht werden müssen:
+	es ist sinnvoll, die Linienuntersuchung als Untersuchung eines ganzen
+	Bereiches auszulegen; je nach Auflösung müssen sowieso mehrere Linien
+	überprüft werden.
+		Dazu müssen einzelne Bytes bzw.  Words aus zwei Linien extrahiert,
+	miteinander verglichen und Änderungen in den Bits gespeichert werden.
+	Änderungen der Farben, am besten gleichzusetzen mit den Änderungen der
+	Farbnummern, ergeben sich aus der Summe der Bitunterschiede in den
+	einzelnen Bitplanes.
+		Es ist darauf zu achten, daß hochauflösende Screens problemlos
+	Bitplanes mit jeweils mehr als 32KB besitzen können!  Die Adressierung
+	ist entsprechend zu wählen.
+
+-Wichtig ist, daß Linien über die möglichst ganze Breite des Männchens
+	analysiert werden, sonst führen bereits kleine Unterbrechungen wie
+	Zeichenzwischenräume o.ä.  zu einem Freifall, der dann mit 2 Sekunden
+	Stehenbleiben unterbrochen wird.
+

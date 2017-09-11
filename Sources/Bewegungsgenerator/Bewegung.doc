@@ -1,0 +1,54 @@
+JPK13.04.92-14.04.92
+
+
+Import:
+	Listenverwaltung.
+	Zufallsgenerator.
+	Bildschirmanalyse.
+	Darstellung.
+	Flags.finale.
+
+Export:
+	Flags.quit;
+
+
+Funktionen:
+
+Bewegung_Init:
+	-ist vor dem ersten Benutzen des Moduls aufzurufen.
+	-keine Parameter.
+	-kein Rückgabewert.
+
+Bewegung_Clear:
+	-ist nach dem letzten Benutzen des Moduls aufzurufen; gibt u.a.
+		sämtliche noch vorhandene Männchen frei.
+	-keine Parameter.
+	-kein Rückgabewert.
+
+Bewegung_Neu:
+	-stellt ein neues Männchen vollständig bereit.
+	-keine Parameter.
+	-Rückgabewert (char): 0/1 für Fehler/Erfolg.
+
+Bewegung_Alt:
+	-bewegt Männchen dazu, bald zu verschwinden.
+	-Parameter (word): Anzahl der Männchen, die verschwinden sollen, oder -1
+		für alle.
+	-kein Rückgabewert.
+
+Bewegung_Schritt:
+	-führt einen Bewegungsschritt durch; führt alle dazu benötigten
+		Berechnungen durch, inclusive der Überwachung der Screens.  Männchen,
+		die verschwinden sollten und nun den Bildschirm verlassen haben,
+		werden entfernt.
+	-keine Parameter.
+	-Ergebnis: Flags.Quit wird auf 1 gesetzt, falls alle Männchen
+		verschwunden sind und Flags.finale gesetzt war.
+
+Bewegung_Schritt:
+	-wie Bewegung_Schritt, allerdings mit reduzierten Überprüfungen. Es
+		werden nur die Männchen bewegt und dargestellt, und überprüft, ob
+		Männchen einen anderen Screen betreten haben.
+	-keine Parameter.
+	-kein Ergebnis.
+
